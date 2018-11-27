@@ -1,7 +1,5 @@
-
-  
 #   An Hurricane "makes landfall" when the eye of the storm passes over land. 
-# In the following analysis I would like to investigate statistics related to hurricane landfalls in US.
+# Capstone topic: In the following analysis we would like to investigate statistics related to hurricane landfalls in US.
 # 
 # 
 # ```{r setup, include =FALSE}
