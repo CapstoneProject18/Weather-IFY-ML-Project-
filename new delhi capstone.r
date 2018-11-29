@@ -12,8 +12,8 @@ library(lubridate)
 
 #Data preparation, NA values
 
-df<-read.csv('../input/waether_data_delhi_safdarjung.csv',sep=',')
-#missmap(df, legend = TRUE, col = c("#46ACC8","#EBCC2A"), y.cex = 0.001, x.cex = 0.8, rank.order = TRUE)
+df<-read.csv('testset.csv',sep=',')
+missmap(df, legend = TRUE, col = c("#46ACC8","#EBCC2A"), y.cex = 0.001, x.cex = 0.8, rank.order = TRUE)
 
 head(df %>% filter(nchar(as.character(datetime_utc))<6),3)
 
@@ -98,7 +98,7 @@ df3 %>% select(ordered_month,year,X_tempm) %>%
 
 #need to re-arrange the dataframe by year
 df5<-as.data.frame(df3 %>% select(year,ordered_month,X_tempm) %>% group_by(year,ordered_month) %>% summarise(monthlyTemp = mean(X_tempm)))
-#df6<-arrange(df5,year)
+df6<-arrange(df5,year)
 myts <- ts(df5$monthlyTemp,start=c(1997,1), end=c(2016,12), frequency=12)
 autoplot(decompose(myts))
 
@@ -117,7 +117,9 @@ autoplot(d.forecast)
 
 df5<-as.data.frame(df3 %>% select(year,month,X_tempm) %>% group_by(year,month) %>% summarise(monthlyTemp = mean(X_tempm)))
 df5$dateTS<-as.Date(paste0(df5$year,'-',df5$month,'-01'))
+
 #select train/test sample
+
 train <- df5 %>% dplyr::filter(year<2016)
 test <- df5 %>% dplyr::filter(year>=2016) 
 train_ts <- ts(train$monthlyTemp,start=c(1997,1), end=c(2015,12), frequency=12)
@@ -183,8 +185,10 @@ ggplot(data=df3,aes(x=X_tempm,y=X_hum_2,color=factor(ordered_month))) + geom_poi
 
 #select a day for testing 
 test <- df3 %>% filter(year==2016 & month==6 & day==21)
+
 #as.Date format
 test$DATE<-as.POSIXct(paste(paste0(test$year,'-',test$month,'-',test$day), paste0(test$hour,':',test$min) ), format="%Y-%m-%d %H:%M")
+
 #convert pressure mmbar in inchHg
 test$X_pressureIn<-test$X_pressurem * 0.02953
 
@@ -193,9 +197,11 @@ dx<-c(0,0.25,0.5,0.75,1,0.75,0.5,0.25,0,-0.25,-0.5,-0.75,-1,-0.75,-0.5,-0.25)
 dy<-c(1,0.75,0.5,-.25,0,-0.25,-0.5,-0.75,-1,-0.75,-0.5,-0.25,0,0.25,0.5,0.75)
 directions<-data.frame('X_wdire'=coord,'dx' = dx, 'dy' =dy)
 test<-as.data.frame(merge(test,directions,by='X_wdire'))
+
 #conversion DATE as decimal_date for geom_segment
 test$DATE_decimal<-decimal_date(test$DATE)
-#head(test)
+
+head(test)
 
 panel1<-ggplot() + 
   geom_line(data=test,aes(x=DATE_decimal,y= X_tempm,color="temp"),size=1.5) +
