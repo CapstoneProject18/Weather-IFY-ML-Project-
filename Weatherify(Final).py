@@ -14,6 +14,38 @@ print(train_shape)
 # In[2]:
 
 
+import seaborn as sns
+import matplotlib.pyplot as plt
+get_ipython().run_line_magic('matplotlib', 'inline')
+fig, ax = plt.subplots(figsize=(10,10))         # Sample figsize in inches
+corr = train.corr()
+sns.heatmap(corr, cmap="YlGnBu", annot = True,ax=ax)
+
+
+# In[5]:
+
+
+sns.distplot(train["Minimum Pressure"])
+plt.show()
+
+
+# In[6]:
+
+
+sns.distplot(train["Maximum Wind"])
+plt.show()
+
+
+# In[7]:
+
+
+sns.distplot(train["Date"])
+plt.show()
+
+
+# In[3]:
+
+
 def create_dummies(df,column_name):
     dummies = pd.get_dummies(df[column_name],prefix=column_name)
     df = pd.concat([df,dummies],axis=1)
@@ -28,7 +60,7 @@ train = train.drop("Date",axis=1)
 train.head()
 
 
-# In[3]:
+# In[4]:
 
 
 #Assigning 70% data to train1 and 30% data to test
@@ -40,14 +72,14 @@ train1 = shuffled_train.iloc[0:highest_train_row]
 test = shuffled_train.iloc[highest_train_row:]
 
 
-# In[4]:
+# In[5]:
 
 
 train1.shape
 test.shape
 
 
-# In[5]:
+# In[6]:
 
 
 #Making the model using the features
@@ -89,7 +121,7 @@ predicted_status = testing_probs.idxmax(axis=1)
 print(predicted_status)
 
 
-# In[9]:
+# In[10]:
 
 
 #Measuring the accuracy of the model
@@ -99,7 +131,7 @@ accuracy = accuracy_score(test["Status"], predicted_status)
 print(accuracy)
 
 
-# In[10]:
+# In[9]:
 
 
 #Finding the cross validation of the model i.e evaluating our model
@@ -109,7 +141,7 @@ print (cross_val)
 print (cross_val.mean())
 
 
-# In[11]:
+# In[10]:
 
 
 # Finding the confusion matrix to see the no of correct instances
@@ -117,28 +149,56 @@ from sklearn import metrics
 print (metrics.confusion_matrix(test["Status"], predicted_status))
 
 
-# In[ ]:
+# In[11]:
 
 
 # Doing feature selection
-from sklearn.ensemble import RandomForestClassifier
-from mlxtend.feature_selection import SequentialFeatureSelector as sfs
+#from sklearn.ensemble import RandomForestClassifier
+#from mlxtend.feature_selection import SequentialFeatureSelector as sfs
 # Build RF classifier to use in feature selection
-clf = RandomForestClassifier(n_estimators=100, n_jobs=-1)
+#clf = RandomForestClassifier(n_estimators=100, n_jobs=-1)
 
 # Build step forward feature selection
-sfs1 = sfs(clf,
-           k_features=3,
-           forward=True,
-           floating=False,
-           verbose=2,
-           scoring='accuracy',
-           cv=0)
+#sfs1 = sfs(clf,
+ #          k_features=3,
+ #          forward=True,
+ #          floating=False,
+ #          verbose=2,
+ #          scoring='accuracy',
+ #          cv=0)
 
 # Perform SFFS
-sfs1 = sfs1.fit(X_train, y_train)
+#sfs1 = sfs1.fit(X_train, y_train)
 
 # Naming the final features selected
-feat_cols = list(sfs1.k_feature_idx_)
-print(feat_cols)
+#feat_cols = list(sfs1.k_feature_idx_)
+#print(feat_cols)
+
+
+# In[ ]:
+
+
+#import numpy as np; np.random.seed(0)
+#import seaborn as sns; sns.set()
+
+# calculate the correlation matrix
+#corr = train.corr()
+
+# plot the heatmap
+#sns.heatmap(corr, 
+ #       xticklabels=corr.columns,
+  #      yticklabels=corr.columns)
+
+
+# In[9]:
+
+
+sns.violinplot(test['Status'],predicted_status) #Variable Plot
+sns.despine()
+
+
+# In[13]:
+
+
+
 
