@@ -1,0 +1,93 @@
+
+
+```{r}
+
+## app.R ##
+library(shiny)
+library(shinydashboard)
+
+ui <- dashboardPage(
+  dashboardHeader(title = "WeatherIFY"),
+  ## Sidebar content
+  dashboardSidebar(
+    sidebarMenu(
+      menuItem("Manik", tabName = "manik", icon = icon("dashboard")),
+      menuItem("Waseem", tabName = "waseem", icon = icon("dashboard")),
+      menuItem("Aniket", tabName = "aniket", icon = icon("dashboard")),
+      menuItem("Gaurav", tabName = "gaurav", icon = icon("dashboard")),
+      menuItem("Kundan", tabName = "kundan", icon = icon("dashboard"))
+    )
+  ),
+  dashboardBody(
+    tabItems(
+      
+      tabItem(tabName = "manik",
+        fluidRow(
+          box(plotOutput("manik1", height = 500)),
+          box(plotOutput("manik2", height = 500)),
+          box(plotOutput("manik3", height = 500))
+      )
+      ),
+      
+      tabItem(tabName = "waseem",
+        fluidRow(
+          box(plotOutput("first1", height = 500)),
+          box(plotOutput("first2", height = 500)),
+          box(plotOutput("first3", height = 500))
+      )
+      )
+    )
+  )
+)
+
+server <- function(input, output) {
+  set.seed(122)
+  
+  output$manik1 <- renderPlot({
+    
+  })
+  
+  
+  output$manik2 <- renderPlot({
+    
+  })
+  
+  
+  output$first1 <- renderPlot({
+    ggplot(data=df4, aes(x=year,y=ordered_month)) + 
+    geom_tile(aes(fill = dailyTemp),colour = "white") + 
+    scale_fill_gradientn(colours=rev(brewer.pal(10,'Spectral'))) + 
+    theme(legend.title=element_blank(),axis.title.y=element_blank(),axis.title.x=element_blank(),legend.position="top") + ggtitle("Temperature (daily average) in New-Dehli")
+    
+  })
+  
+  output$first2 <- renderPlot({
+    ggplot(data=df4,aes(x=ordered_month,y=dailyTemp,color=dailyTemp)) + 
+  scale_color_gradientn(colours=rev(brewer.pal(10,'Spectral'))) + 
+  geom_boxplot(colour='black',size=.4,alpha=.5) + 
+  geom_jitter(shape=16,position=position_jitter(0.2),size=.4) + 
+  facet_wrap(~factor(year),ncol=7) + 
+  theme(legend.position='none',axis.text.x = element_text(angle=45, hjust=1)) + 
+  xlab('') + ylab('temperature (Celsius)')
+  })
+  
+  output$first3 <- renderPlot({
+    df3 %>% select(ordered_month,year,X_tempm) %>% 
+  group_by(ordered_month,year) %>% 
+  summarise(monthlyTemp = mean(X_tempm)) %>% 
+  ggplot(aes(x=ordered_month,y=monthlyTemp,color=monthlyTemp)) + 
+  scale_color_gradientn(colours=rev(brewer.pal(10,'Spectral'))) + 
+  geom_boxplot(colour='black',size=.4,alpha=.5) + 
+  geom_jitter(shape=16,width=.2,size=2) + 
+  theme(legend.title=element_blank(),legend.position='top',axis.text.x = element_text(angle=45, hjust=1)) + 
+  ggtitle("Temperature (monthly average) in New-Dehli") + 
+  xlab('') + ylab('temperature (Celsius)')
+  })
+}
+
+
+shinyApp(ui, server)
+
+
+```
+
