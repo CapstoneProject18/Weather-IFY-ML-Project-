@@ -42,6 +42,17 @@ ui <- dashboardPage(
           box(plotOutput("first8", height = 500)),
           box(plotOutput("first9", height = 500))
       )
+      ),
+      tabItem(tabName = "aniket",
+        fluidRow(
+          box(plotOutput("aniket1", height = 500)),
+          box(plotOutput("aniket2", height = 500)),
+          box(plotOutput("aniket3", height = 500)),
+          box(plotOutput("aniket4", height = 500)),
+          box(plotOutput("aniket5", height = 500)),
+          box(plotOutput("aniket6", height = 500)),
+          box(plotOutput("aniket7", height = 500))
+      )
       )
     )
   )
@@ -122,6 +133,29 @@ output$first9 <- renderPlot({
     grid.arrange(panel1,panel2, panel3,ncol=1)
   })
   
+output$aniket1 <- renderPlot({
+    plot(myimg5)
+  })
+output$aniket2 <- renderPlot({
+    plot(myimg6)
+  })
+output$aniket3 <- renderPlot({
+    plot(myimg7)
+  })
+output$aniket4 <- renderPlot({
+    plot(myimg8)
+  })
+output$aniket5 <- renderPlot({
+    plot(myimg9)
+  })
+output$aniket6 <- renderPlot({
+    plot(myimg10)
+  })
+output$aniket7 <- renderPlot({
+    plot(myimg11)
+  })
+
+
 }
 
 
@@ -386,6 +420,21 @@ plot(myimg4)
 #aniket
 
 
+library(imager)
+myimg5 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Apply moving average and show the Low Pass Filtered Signal.png")
+myimg6 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Show Auto-Correlation with various zoom ins (temporal scales).png")
+myimg7 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Show Temperature as function of time for several selected Cities.png")
+myimg8 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Show the Auto-Correlation function of Los Angeles Temperature Signal.png")
+myimg9 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Show the Auto-Correlation of the High Pass Filtered Signal.png")
+myimg10 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Show the Auto-Correlation of the Low Pass Filtered Signal.png")
+myimg11 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Subtract the Low-Pass-Filtered Signal from the Original Signal and show the resulting High-Pass-Filtered Signal.png")
+plot(myimg5)
+plot(myimg6)
+plot(myimg7)
+plot(myimg8)
+plot(myimg9)
+plot(myimg10)
+plot(myimg11)
 
 ```
 
