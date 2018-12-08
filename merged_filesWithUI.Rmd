@@ -7,31 +7,31 @@ library(shiny)
 library(shinydashboard)
 
 ui <- dashboardPage(
-  dashboardHeader(title = "Basic dashboard"),
+  dashboardHeader(title = "WeatherIFY"),
   ## Sidebar content
   dashboardSidebar(
     sidebarMenu(
-      menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard")),
-      menuItem("Widgets", tabName = "widgets", icon = icon("th"))
+      menuItem("Manik", tabName = "manik", icon = icon("dashboard")),
+      menuItem("Waseem", tabName = "waseem", icon = icon("dashboard"))
     )
   ),
   dashboardBody(
     tabItems(
-      # First tab content
-      tabItem(tabName = "dashboard",
+      
+      tabItem(tabName = "manik",
         fluidRow(
-          box(plotOutput("plot1", height = 250)),
-
-          box(
-            title = "Controls",
-            sliderInput("slider", "Number of observations:", 1, 100, 50)
-          )
-        )
+          box(plotOutput("manik1", height = 500)),
+          box(plotOutput("manik2", height = 500)),
+          box(plotOutput("manik3", height = 500))
+      )
       ),
-
-      # Second tab content
-      tabItem(tabName = "widgets",
-        h2("Widgets tab content")
+      
+      tabItem(tabName = "waseem",
+        fluidRow(
+          box(plotOutput("first1", height = 500)),
+          box(plotOutput("first2", height = 500)),
+          box(plotOutput("first3", height = 500))
+      )
       )
     )
   )
@@ -39,13 +39,49 @@ ui <- dashboardPage(
 
 server <- function(input, output) {
   set.seed(122)
-  histdata <- rnorm(500)
-
-  output$plot1 <- renderPlot({
-    data <- histdata[seq_len(input$slider)]
-    hist(data)
+  
+  output$manik1 <- renderPlot({
+    
+  })
+  
+  
+  output$manik2 <- renderPlot({
+    
+  })
+  
+  
+  output$first1 <- renderPlot({
+    ggplot(data=df4, aes(x=year,y=ordered_month)) + 
+    geom_tile(aes(fill = dailyTemp),colour = "white") + 
+    scale_fill_gradientn(colours=rev(brewer.pal(10,'Spectral'))) + 
+    theme(legend.title=element_blank(),axis.title.y=element_blank(),axis.title.x=element_blank(),legend.position="top") + ggtitle("Temperature (daily average) in New-Dehli")
+    
+  })
+  
+  output$first2 <- renderPlot({
+    ggplot(data=df4,aes(x=ordered_month,y=dailyTemp,color=dailyTemp)) + 
+  scale_color_gradientn(colours=rev(brewer.pal(10,'Spectral'))) + 
+  geom_boxplot(colour='black',size=.4,alpha=.5) + 
+  geom_jitter(shape=16,position=position_jitter(0.2),size=.4) + 
+  facet_wrap(~factor(year),ncol=7) + 
+  theme(legend.position='none',axis.text.x = element_text(angle=45, hjust=1)) + 
+  xlab('') + ylab('temperature (Celsius)')
+  })
+  
+  output$first3 <- renderPlot({
+    df3 %>% select(ordered_month,year,X_tempm) %>% 
+  group_by(ordered_month,year) %>% 
+  summarise(monthlyTemp = mean(X_tempm)) %>% 
+  ggplot(aes(x=ordered_month,y=monthlyTemp,color=monthlyTemp)) + 
+  scale_color_gradientn(colours=rev(brewer.pal(10,'Spectral'))) + 
+  geom_boxplot(colour='black',size=.4,alpha=.5) + 
+  geom_jitter(shape=16,width=.2,size=2) + 
+  theme(legend.title=element_blank(),legend.position='top',axis.text.x = element_text(angle=45, hjust=1)) + 
+  ggtitle("Temperature (monthly average) in New-Dehli") + 
+  xlab('') + ylab('temperature (Celsius)')
   })
 }
+
 
 shinyApp(ui, server)
 
@@ -61,7 +97,8 @@ shinyApp(ui, server)
 # In[1]:
 
 from collections import OrderedDict
-
+import sys
+print sys.getdefaultencoding()
 import numpy as np
 import pandas as pd
 
