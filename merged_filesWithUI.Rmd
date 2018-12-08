@@ -5,7 +5,7 @@
 ## app.R ##
 library(shiny)
 library(shinydashboard)
-
+library(png)
 ui <- dashboardPage(
   dashboardHeader(title = "WeatherIFY"),
   ## Sidebar content
@@ -25,7 +25,8 @@ ui <- dashboardPage(
         fluidRow(
           box(plotOutput("manik1", height = 500)),
           box(plotOutput("manik2", height = 500)),
-          box(plotOutput("manik3", height = 500))
+          box(plotOutput("manik3", height = 500)),
+          box(plotOutput("manik4", height = 500))
       )
       ),
       
@@ -48,16 +49,19 @@ ui <- dashboardPage(
 
 server <- function(input, output) {
   set.seed(122)
-  
+
   output$manik1 <- renderPlot({
-    
+    plot(myimg1)
   })
-  
-  
   output$manik2 <- renderPlot({
-    
+    plot(myimg2)
   })
-  
+  output$manik3 <- renderPlot({
+    plot(myimg3)
+  })
+  output$manik4 <- renderPlot({
+    plot(myimg4)
+  })
   
   output$first1 <- renderPlot({
     ggplot(data=df4, aes(x=year,y=ordered_month)) + 
@@ -360,5 +364,28 @@ panel3<-ggplot(data=test,aes(x=DATE_decimal,y=X_wspdm,color='windspeed')) +
   theme(legend.position='top')
 
 grid.arrange(panel1,panel2, panel3,ncol=1)
+```
+
+```{r}
+
+#manik 
+
+
+library(imager)
+myimg1 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Screenshot (158).png")
+myimg2 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Screenshot (159).png")
+myimg3 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Screenshot (160).png")
+myimg4 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Screenshot (168).png")
+plot(myimg1)
+plot(myimg2)
+plot(myimg3)
+plot(myimg4)
+```
+
+```{r}
+#aniket
+
+
+
 ```
 
