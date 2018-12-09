@@ -1,0 +1,446 @@
+************* Module Weather-IFYproto
+W1401: 49,0: : Anomalous backslash in string: '\c'. String constant might be missing an r prefix.
+W1401:147,0: : Anomalous backslash in string: '\c'. String constant might be missing an r prefix.
+W1401:164,0: : Anomalous backslash in string: '\D'. String constant might be missing an r prefix.
+W1401:164,0: : Anomalous backslash in string: '\c'. String constant might be missing an r prefix.
+C0326: 17,14: : Exactly one space required before assignment
+cityTable     = pd.read_csv('city_attributes.csv')
+              ^
+C0326: 34,14: : Exactly one space required before assignment
+citiesToShow  = ['Portland','Dallas','Miami','Montreal','Tel Aviv District']
+              ^
+C0326: 34,27: : Exactly one space required after comma
+citiesToShow  = ['Portland','Dallas','Miami','Montreal','Tel Aviv District']
+                           ^
+C0326: 34,36: : Exactly one space required after comma
+citiesToShow  = ['Portland','Dallas','Miami','Montreal','Tel Aviv District']
+                                    ^
+C0326: 34,44: : Exactly one space required after comma
+citiesToShow  = ['Portland','Dallas','Miami','Montreal','Tel Aviv District']
+                                            ^
+C0326: 34,55: : Exactly one space required after comma
+citiesToShow  = ['Portland','Dallas','Miami','Montreal','Tel Aviv District']
+                                                       ^
+C0301: 37,0: : Line too long (111/100)
+C0326: 37,44: : Exactly one space required after comma
+t1 = pd.date_range(pd.to_datetime('1/7/2015',dayfirst=True),pd.to_datetime('1/10/2016',dayfirst=True),freq='H')
+                                            ^
+C0326: 37,59: : Exactly one space required after comma
+t1 = pd.date_range(pd.to_datetime('1/7/2015',dayfirst=True),pd.to_datetime('1/10/2016',dayfirst=True),freq='H')
+                                                           ^
+C0326: 37,86: : Exactly one space required after comma
+t1 = pd.date_range(pd.to_datetime('1/7/2015',dayfirst=True),pd.to_datetime('1/10/2016',dayfirst=True),freq='H')
+                                                                                      ^
+C0326: 37,101: : Exactly one space required after comma
+t1 = pd.date_range(pd.to_datetime('1/7/2015',dayfirst=True),pd.to_datetime('1/10/2016',dayfirst=True),freq='H')
+                                                                                                     ^
+C0301: 38,0: : Line too long (111/100)
+C0326: 38,44: : Exactly one space required after comma
+t2 = pd.date_range(pd.to_datetime('1/7/2015',dayfirst=True),pd.to_datetime('1/9/2015' ,dayfirst=True),freq='H')
+                                            ^
+C0326: 38,59: : Exactly one space required after comma
+t2 = pd.date_range(pd.to_datetime('1/7/2015',dayfirst=True),pd.to_datetime('1/9/2015' ,dayfirst=True),freq='H')
+                                                           ^
+C0326: 38,86: : No space allowed before comma
+t2 = pd.date_range(pd.to_datetime('1/7/2015',dayfirst=True),pd.to_datetime('1/9/2015' ,dayfirst=True),freq='H')
+                                                                                      ^
+C0326: 38,86: : Exactly one space required after comma
+t2 = pd.date_range(pd.to_datetime('1/7/2015',dayfirst=True),pd.to_datetime('1/9/2015' ,dayfirst=True),freq='H')
+                                                                                      ^
+C0326: 38,101: : Exactly one space required after comma
+t2 = pd.date_range(pd.to_datetime('1/7/2015',dayfirst=True),pd.to_datetime('1/9/2015' ,dayfirst=True),freq='H')
+                                                                                                     ^
+C0301: 39,0: : Line too long (111/100)
+C0326: 39,44: : Exactly one space required after comma
+t3 = pd.date_range(pd.to_datetime('1/7/2015',dayfirst=True),pd.to_datetime('21/7/2015',dayfirst=True),freq='H')
+                                            ^
+C0326: 39,59: : Exactly one space required after comma
+t3 = pd.date_range(pd.to_datetime('1/7/2015',dayfirst=True),pd.to_datetime('21/7/2015',dayfirst=True),freq='H')
+                                                           ^
+C0326: 39,86: : Exactly one space required after comma
+t3 = pd.date_range(pd.to_datetime('1/7/2015',dayfirst=True),pd.to_datetime('21/7/2015',dayfirst=True),freq='H')
+                                                                                      ^
+C0326: 39,101: : Exactly one space required after comma
+t3 = pd.date_range(pd.to_datetime('1/7/2015',dayfirst=True),pd.to_datetime('21/7/2015',dayfirst=True),freq='H')
+                                                                                                     ^
+C0326: 42,30: : Exactly one space required after comma
+fig, ax = plt.subplots(nrows=4,ncols=1,figsize=(15,14))
+                              ^
+C0326: 42,38: : Exactly one space required after comma
+fig, ax = plt.subplots(nrows=4,ncols=1,figsize=(15,14))
+                                      ^
+C0326: 42,50: : Exactly one space required after comma
+fig, ax = plt.subplots(nrows=4,ncols=1,figsize=(15,14))
+                                                  ^
+C0326: 45,20: : Exactly one space required after comma
+        ax[i].plot(t,temperatureDF.loc[t,citiesToShow[k]])
+                    ^
+C0326: 45,40: : Exactly one space required after comma
+        ax[i].plot(t,temperatureDF.loc[t,citiesToShow[k]])
+                                        ^
+C0330: 48,0: : Wrong continued indentation (remove 1 space).
+              loc='upper left',bbox_to_anchor=(0.02,1.3), ncol=len(citiesToShow))
+             |^
+C0326: 48,30: : Exactly one space required after comma
+              loc='upper left',bbox_to_anchor=(0.02,1.3), ncol=len(citiesToShow))
+                              ^
+C0326: 48,51: : Exactly one space required after comma
+              loc='upper left',bbox_to_anchor=(0.02,1.3), ncol=len(citiesToShow))
+                                                   ^
+W0301: 50,0: : Unnecessary semicolon
+C0326: 59,22: : Exactly one space required after comma
+selectedLagPoints = [1,3,6,9,12,24,36,48,60]
+                      ^
+C0326: 59,24: : Exactly one space required after comma
+selectedLagPoints = [1,3,6,9,12,24,36,48,60]
+                        ^
+C0326: 59,26: : Exactly one space required after comma
+selectedLagPoints = [1,3,6,9,12,24,36,48,60]
+                          ^
+C0326: 59,28: : Exactly one space required after comma
+selectedLagPoints = [1,3,6,9,12,24,36,48,60]
+                            ^
+C0326: 59,31: : Exactly one space required after comma
+selectedLagPoints = [1,3,6,9,12,24,36,48,60]
+                               ^
+C0326: 59,34: : Exactly one space required after comma
+selectedLagPoints = [1,3,6,9,12,24,36,48,60]
+                                  ^
+C0326: 59,37: : Exactly one space required after comma
+selectedLagPoints = [1,3,6,9,12,24,36,48,60]
+                                     ^
+C0326: 59,40: : Exactly one space required after comma
+selectedLagPoints = [1,3,6,9,12,24,36,48,60]
+                                        ^
+C0326: 65,22: : Exactly one space required after comma
+plt.figure(figsize=(12,6))
+                      ^
+C0326: 73,25: : Exactly one space required after comma
+allTimeLags = np.arange(1,maxLagDays*24)
+                         ^
+C0303: 75,36: : Trailing whitespace
+C0326: 75,25: : Exactly one space required after comma
+axTopRow.plot(allTimeLags,autoCorr); 
+                         ^
+W0301: 75,0: : Unnecessary semicolon
+W0301: 76,0: : Unnecessary semicolon
+C0303: 83,91: : Trailing whitespace
+C0326: 85,36: : Exactly one space required after comma
+        axBottomRow[i].set_yticks([],[])
+                                    ^
+C0326: 93,30: : Exactly one space required after comma
+fig, ax = plt.subplots(nrows=4,ncols=1, figsize=(14,14))
+                              ^
+C0326: 93,51: : Exactly one space required after comma
+fig, ax = plt.subplots(nrows=4,ncols=1, figsize=(14,14))
+                                                   ^
+C0326: 95,22: : Exactly one space required after comma
+timeLags = np.arange(1,25*24*30)
+                      ^
+W0301: 97,0: : Unnecessary semicolon
+W0301: 98,0: : Unnecessary semicolon
+C0326:100,22: : Exactly one space required after comma
+timeLags = np.arange(1,20*24*7)
+                      ^
+W0301:102,0: : Unnecessary semicolon
+W0301:103,0: : Unnecessary semicolon
+C0326:105,22: : Exactly one space required after comma
+timeLags = np.arange(1,20*24)
+                      ^
+W0301:107,0: : Unnecessary semicolon
+W0301:108,0: : Unnecessary semicolon
+C0326:110,22: : Exactly one space required after comma
+timeLags = np.arange(1,3*24)
+                      ^
+W0301:112,0: : Unnecessary semicolon
+W0301:113,0: : Unnecessary semicolon
+C0326:125,44: : Exactly one space required after comma
+t1 = pd.date_range(pd.to_datetime('1/7/2015',dayfirst=True),
+                                            ^
+C0326:126,45: : Exactly one space required after comma
+                   pd.to_datetime('1/10/2016',dayfirst=True),freq='H')
+                                             ^
+C0326:126,60: : Exactly one space required after comma
+                   pd.to_datetime('1/10/2016',dayfirst=True),freq='H')
+                                                            ^
+C0326:127,44: : Exactly one space required after comma
+t2 = pd.date_range(pd.to_datetime('1/7/2015',dayfirst=True),
+                                            ^
+C0326:128,45: : No space allowed before comma
+                   pd.to_datetime('1/9/2015' ,dayfirst=True),freq='H')
+                                             ^
+C0326:128,45: : Exactly one space required after comma
+                   pd.to_datetime('1/9/2015' ,dayfirst=True),freq='H')
+                                             ^
+C0326:128,60: : Exactly one space required after comma
+                   pd.to_datetime('1/9/2015' ,dayfirst=True),freq='H')
+                                                            ^
+C0326:129,44: : Exactly one space required after comma
+t3 = pd.date_range(pd.to_datetime('1/7/2015',dayfirst=True),
+                                            ^
+C0326:130,45: : Exactly one space required after comma
+                   pd.to_datetime('21/7/2015',dayfirst=True),freq='H')
+                                             ^
+C0326:130,60: : Exactly one space required after comma
+                   pd.to_datetime('21/7/2015',dayfirst=True),freq='H')
+                                                            ^
+C0326:132,30: : Exactly one space required after comma
+fig, ax = plt.subplots(nrows=4,ncols=1,figsize=(14,12))
+                              ^
+C0326:132,38: : Exactly one space required after comma
+fig, ax = plt.subplots(nrows=4,ncols=1,figsize=(14,12))
+                                      ^
+C0326:132,50: : Exactly one space required after comma
+fig, ax = plt.subplots(nrows=4,ncols=1,figsize=(14,12))
+                                                  ^
+C0326:133,13: : Exactly one space required after comma
+ax[0].plot(t0,originalSignal,c='y')
+             ^
+C0326:133,28: : Exactly one space required after comma
+ax[0].plot(t0,originalSignal,c='y')
+                            ^
+C0326:134,13: : Exactly one space required after comma
+ax[0].plot(t0,lowPassFilteredSignal,c='r')
+             ^
+C0326:134,35: : Exactly one space required after comma
+ax[0].plot(t0,lowPassFilteredSignal,c='r')
+                                   ^
+C0326:136,13: : Exactly one space required after comma
+ax[1].plot(t1,originalSignal[t1],c='y')
+             ^
+C0326:136,32: : Exactly one space required after comma
+ax[1].plot(t1,originalSignal[t1],c='y')
+                                ^
+C0326:137,13: : Exactly one space required after comma
+ax[1].plot(t1,lowPassFilteredSignal[t1],c='r')
+             ^
+C0326:137,39: : Exactly one space required after comma
+ax[1].plot(t1,lowPassFilteredSignal[t1],c='r')
+                                       ^
+C0326:139,13: : Exactly one space required after comma
+ax[2].plot(t2,originalSignal[t2],c='y')
+             ^
+C0326:139,32: : Exactly one space required after comma
+ax[2].plot(t2,originalSignal[t2],c='y')
+                                ^
+C0326:140,13: : Exactly one space required after comma
+ax[2].plot(t2,lowPassFilteredSignal[t2],c='r')
+             ^
+C0326:140,39: : Exactly one space required after comma
+ax[2].plot(t2,lowPassFilteredSignal[t2],c='r')
+                                       ^
+C0326:142,13: : Exactly one space required after comma
+ax[3].plot(t3,originalSignal[t3],c='y')
+             ^
+C0326:142,32: : Exactly one space required after comma
+ax[3].plot(t3,originalSignal[t3],c='y')
+                                ^
+C0326:143,13: : Exactly one space required after comma
+ax[3].plot(t3,lowPassFilteredSignal[t3],c='r')
+             ^
+C0326:143,39: : Exactly one space required after comma
+ax[3].plot(t3,lowPassFilteredSignal[t3],c='r')
+                                       ^
+C0326:145,31: : Exactly one space required after comma
+ax[0].legend(['original signal','low pass filtered'], fontsize=18,
+                               ^
+C0330:146,0: : Wrong continued indentation (remove 1 space).
+              loc='upper left',bbox_to_anchor=(0.02,1.4), ncol=len(citiesToShow))
+             |^
+C0326:146,30: : Exactly one space required after comma
+              loc='upper left',bbox_to_anchor=(0.02,1.4), ncol=len(citiesToShow))
+                              ^
+C0326:146,51: : Exactly one space required after comma
+              loc='upper left',bbox_to_anchor=(0.02,1.4), ncol=len(citiesToShow))
+                                                   ^
+W0301:148,0: : Unnecessary semicolon
+C0326:157,30: : Exactly one space required after comma
+fig, ax = plt.subplots(nrows=4,ncols=1,figsize=(14,12))
+                              ^
+C0326:157,38: : Exactly one space required after comma
+fig, ax = plt.subplots(nrows=4,ncols=1,figsize=(14,12))
+                                      ^
+C0326:157,50: : Exactly one space required after comma
+fig, ax = plt.subplots(nrows=4,ncols=1,figsize=(14,12))
+                                                  ^
+C0326:158,13: : Exactly one space required after comma
+ax[0].plot(t0,highPassFilteredSignal,c='k')
+             ^
+C0326:158,36: : Exactly one space required after comma
+ax[0].plot(t0,highPassFilteredSignal,c='k')
+                                    ^
+C0326:159,13: : Exactly one space required after comma
+ax[1].plot(t1,highPassFilteredSignal[t1],c='k')
+             ^
+C0326:159,40: : Exactly one space required after comma
+ax[1].plot(t1,highPassFilteredSignal[t1],c='k')
+                                        ^
+C0326:160,13: : Exactly one space required after comma
+ax[2].plot(t2,highPassFilteredSignal[t2],c='k')
+             ^
+C0326:160,40: : Exactly one space required after comma
+ax[2].plot(t2,highPassFilteredSignal[t2],c='k')
+                                        ^
+C0326:161,13: : Exactly one space required after comma
+ax[3].plot(t3,highPassFilteredSignal[t3],c='k')
+             ^
+C0326:161,40: : Exactly one space required after comma
+ax[3].plot(t3,highPassFilteredSignal[t3],c='k')
+                                        ^
+C0326:163,59: : Exactly one space required after comma
+ax[0].set_title('Deflection of Temperature from local mean',fontsize=20)
+                                                           ^
+W0301:165,0: : Unnecessary semicolon
+C0326:172,30: : Exactly one space required after comma
+fig, ax = plt.subplots(nrows=4,ncols=1,figsize=(14,14))
+                              ^
+C0326:172,38: : Exactly one space required after comma
+fig, ax = plt.subplots(nrows=4,ncols=1,figsize=(14,14))
+                                      ^
+C0326:172,50: : Exactly one space required after comma
+fig, ax = plt.subplots(nrows=4,ncols=1,figsize=(14,14))
+                                                  ^
+C0326:174,22: : Exactly one space required after comma
+timeLags = np.arange(1,25*24*30)
+                      ^
+C0303:176,43: : Trailing whitespace
+W0301:176,0: : Unnecessary semicolon
+W0301:177,0: : Unnecessary semicolon
+W0301:178,0: : Unnecessary semicolon
+C0326:180,22: : Exactly one space required after comma
+timeLags = np.arange(1,20*24*7)
+                      ^
+W0301:182,0: : Unnecessary semicolon
+W0301:183,0: : Unnecessary semicolon
+C0326:185,22: : Exactly one space required after comma
+timeLags = np.arange(1,20*24)
+                      ^
+W0301:187,0: : Unnecessary semicolon
+W0301:188,0: : Unnecessary semicolon
+C0326:190,22: : Exactly one space required after comma
+timeLags = np.arange(1,3*24)
+                      ^
+W0301:192,0: : Unnecessary semicolon
+W0301:193,0: : Unnecessary semicolon
+C0326:200,30: : Exactly one space required after comma
+fig, ax = plt.subplots(nrows=4,ncols=1, figsize=(14,14))
+                              ^
+C0326:200,51: : Exactly one space required after comma
+fig, ax = plt.subplots(nrows=4,ncols=1, figsize=(14,14))
+                                                   ^
+C0326:202,22: : Exactly one space required after comma
+timeLags = np.arange(1,25*24*30)
+                      ^
+C0303:204,43: : Trailing whitespace
+W0301:204,0: : Unnecessary semicolon
+W0301:205,0: : Unnecessary semicolon
+W0301:206,0: : Unnecessary semicolon
+C0326:208,22: : Exactly one space required after comma
+timeLags = np.arange(1,20*24*7)
+                      ^
+W0301:210,0: : Unnecessary semicolon
+W0301:211,0: : Unnecessary semicolon
+C0326:213,22: : Exactly one space required after comma
+timeLags = np.arange(1,20*24)
+                      ^
+W0301:215,0: : Unnecessary semicolon
+W0301:216,0: : Unnecessary semicolon
+C0326:218,22: : Exactly one space required after comma
+timeLags = np.arange(1,3*24)
+                      ^
+W0301:220,0: : Unnecessary semicolon
+W0301:221,0: : Unnecessary semicolon
+C0305:228,0: : Trailing newlines
+C0103:  1,0: : Module name "Weather-IFYproto" doesn't conform to snake_case naming style
+C0111:  1,0: : Missing module docstring
+C0414: 11,0: : Import alias does not rename original package
+C0103: 17,0: : Constant name "cityTable" doesn't conform to UPPER_CASE naming style
+C0103: 23,0: : Constant name "temperatureDF" doesn't conform to UPPER_CASE naming style
+W0104: 26,0: : Statement seems to have no effect
+C0103: 34,0: : Constant name "citiesToShow" doesn't conform to UPPER_CASE naming style
+C0103: 36,0: : Constant name "t0" doesn't conform to UPPER_CASE naming style
+C0103: 37,0: : Constant name "t1" doesn't conform to UPPER_CASE naming style
+C0103: 38,0: : Constant name "t2" doesn't conform to UPPER_CASE naming style
+C0103: 39,0: : Constant name "t3" doesn't conform to UPPER_CASE naming style
+C0103: 40,0: : Constant name "t" doesn't conform to UPPER_CASE naming style
+C0103: 42,0: : Constant name "fig" doesn't conform to UPPER_CASE naming style
+C0103: 42,5: : Constant name "ax" doesn't conform to UPPER_CASE naming style
+C0200: 44,4: : Consider using enumerate instead of iterating with range and len
+C0200: 49,0: : Consider using enumerate instead of iterating with range and len
+C0321: 49,25: : More than one statement on a single line
+C0103: 58,0: : Constant name "cityToShow" doesn't conform to UPPER_CASE naming style
+C0103: 59,0: : Constant name "selectedLagPoints" doesn't conform to UPPER_CASE naming style
+C0103: 60,0: : Constant name "maxLagDays" doesn't conform to UPPER_CASE naming style
+C0103: 62,0: : Constant name "originalSignal" doesn't conform to UPPER_CASE naming style
+C0103: 66,0: : Constant name "gs" doesn't conform to UPPER_CASE naming style
+C0103: 67,0: : Constant name "axTopRow" doesn't conform to UPPER_CASE naming style
+C0103: 68,0: : Constant name "axBottomRow" doesn't conform to UPPER_CASE naming style
+C0103: 73,0: : Constant name "allTimeLags" doesn't conform to UPPER_CASE naming style
+C0103: 74,0: : Constant name "autoCorr" doesn't conform to UPPER_CASE naming style
+C0321: 77,41: : More than one statement on a single line
+C0103: 78,0: : Constant name "selectedAutoCorr" doesn't conform to UPPER_CASE naming style
+C0200: 82,0: : Consider using enumerate instead of iterating with range and len
+C0103: 93,0: : Constant name "fig" doesn't conform to UPPER_CASE naming style
+C0103: 93,5: : Constant name "ax" doesn't conform to UPPER_CASE naming style
+C0103: 95,0: : Constant name "timeLags" doesn't conform to UPPER_CASE naming style
+C0103: 96,0: : Constant name "autoCorr" doesn't conform to UPPER_CASE naming style
+C0321: 97,44: : More than one statement on a single line
+C0321: 98,39: : More than one statement on a single line
+C0103:100,0: : Constant name "timeLags" doesn't conform to UPPER_CASE naming style
+C0103:101,0: : Constant name "autoCorr" doesn't conform to UPPER_CASE naming style
+C0321:103,38: : More than one statement on a single line
+C0103:105,0: : Constant name "timeLags" doesn't conform to UPPER_CASE naming style
+C0103:106,0: : Constant name "autoCorr" doesn't conform to UPPER_CASE naming style
+C0321:108,37: : More than one statement on a single line
+C0103:110,0: : Constant name "timeLags" doesn't conform to UPPER_CASE naming style
+C0103:111,0: : Constant name "autoCorr" doesn't conform to UPPER_CASE naming style
+C0321:113,38: : More than one statement on a single line
+C0103:120,0: : Constant name "windowSize" doesn't conform to UPPER_CASE naming style
+C0103:122,0: : Constant name "lowPassFilteredSignal" doesn't conform to UPPER_CASE naming style
+C0103:124,0: : Constant name "t0" doesn't conform to UPPER_CASE naming style
+C0103:125,0: : Constant name "t1" doesn't conform to UPPER_CASE naming style
+C0103:127,0: : Constant name "t2" doesn't conform to UPPER_CASE naming style
+C0103:129,0: : Constant name "t3" doesn't conform to UPPER_CASE naming style
+C0103:132,0: : Constant name "fig" doesn't conform to UPPER_CASE naming style
+C0103:132,5: : Constant name "ax" doesn't conform to UPPER_CASE naming style
+C0200:147,0: : Consider using enumerate instead of iterating with range and len
+C0321:147,25: : More than one statement on a single line
+C0103:155,0: : Constant name "highPassFilteredSignal" doesn't conform to UPPER_CASE naming style
+C0103:157,0: : Constant name "fig" doesn't conform to UPPER_CASE naming style
+C0103:157,5: : Constant name "ax" doesn't conform to UPPER_CASE naming style
+C0200:164,0: : Consider using enumerate instead of iterating with range and len
+C0321:164,25: : More than one statement on a single line
+C0103:172,0: : Constant name "fig" doesn't conform to UPPER_CASE naming style
+C0103:172,5: : Constant name "ax" doesn't conform to UPPER_CASE naming style
+C0103:174,0: : Constant name "timeLags" doesn't conform to UPPER_CASE naming style
+C0103:175,0: : Constant name "autoCorr" doesn't conform to UPPER_CASE naming style
+C0321:178,39: : More than one statement on a single line
+C0103:180,0: : Constant name "timeLags" doesn't conform to UPPER_CASE naming style
+C0103:181,0: : Constant name "autoCorr" doesn't conform to UPPER_CASE naming style
+C0321:183,38: : More than one statement on a single line
+C0103:185,0: : Constant name "timeLags" doesn't conform to UPPER_CASE naming style
+C0103:186,0: : Constant name "autoCorr" doesn't conform to UPPER_CASE naming style
+C0321:188,37: : More than one statement on a single line
+C0103:190,0: : Constant name "timeLags" doesn't conform to UPPER_CASE naming style
+C0103:191,0: : Constant name "autoCorr" doesn't conform to UPPER_CASE naming style
+C0321:193,38: : More than one statement on a single line
+C0103:200,0: : Constant name "fig" doesn't conform to UPPER_CASE naming style
+C0103:200,5: : Constant name "ax" doesn't conform to UPPER_CASE naming style
+C0103:202,0: : Constant name "timeLags" doesn't conform to UPPER_CASE naming style
+C0103:203,0: : Constant name "autoCorr" doesn't conform to UPPER_CASE naming style
+C0321:206,39: : More than one statement on a single line
+C0103:208,0: : Constant name "timeLags" doesn't conform to UPPER_CASE naming style
+C0103:209,0: : Constant name "autoCorr" doesn't conform to UPPER_CASE naming style
+C0321:211,38: : More than one statement on a single line
+C0103:213,0: : Constant name "timeLags" doesn't conform to UPPER_CASE naming style
+C0103:214,0: : Constant name "autoCorr" doesn't conform to UPPER_CASE naming style
+C0321:216,37: : More than one statement on a single line
+C0103:218,0: : Constant name "timeLags" doesn't conform to UPPER_CASE naming style
+C0103:219,0: : Constant name "autoCorr" doesn't conform to UPPER_CASE naming style
+C0321:221,38: : More than one statement on a single line
+W0611:  9,0: : Unused autocorrelation_plot imported from pandas.plotting
+
+--------------------------------------------------------------------
+Your code has been rated at -6.60/10 (previous run: -6.60/10, +0.00)
+
+
