@@ -53,6 +53,14 @@ ui <- dashboardPage(
           box(plotOutput("aniket6", height = 500)),
           box(plotOutput("aniket7", height = 500))
       )
+      ),
+      tabItem(tabName = "kundan",
+        fluidRow(
+          box(plotOutput("kundan1", height = 500)),
+          box(plotOutput("kundan2", height = 500)),
+          box(plotOutput("kundan3", height = 500)),
+          box(plotOutput("kundan4", height = 500))
+      )
       )
     )
   )
@@ -153,6 +161,19 @@ output$aniket6 <- renderPlot({
   })
 output$aniket7 <- renderPlot({
     plot(myimg11)
+  })
+  
+output$kundan1 <- renderPlot({
+    plot(myimg12)
+  })
+  output$kundan2 <- renderPlot({
+    plot(myimg13)
+  })
+  output$kundan3 <- renderPlot({
+    plot(myimg14)
+  })
+  output$kundan4 <- renderPlot({
+    plot(myimg15)
   })
 
 
@@ -437,4 +458,20 @@ plot(myimg10)
 plot(myimg11)
 
 ```
+
+```{r}
+#kundan
+
+
+library(imager)
+
+myimg12 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Annual Landfall frequency.png")
+myimg13 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/landfall count by categories.png")
+myimg14 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Landfall Count by Month PIE.png")
+myimg15 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Max Wind Speed at Landfall BOX PLOT.png")
+
+
+
+```
+
 
