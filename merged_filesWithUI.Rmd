@@ -470,7 +470,10 @@ myimg13 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Image
 myimg14 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Landfall Count by Month PIE.png")
 myimg15 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Max Wind Speed at Landfall BOX PLOT.png")
 
-
+plot(myimg12)
+plot(myimg13)
+plot(myimg14)
+plot(myimg15)
 
 ```
 
