@@ -76,6 +76,12 @@ ui <- dashboardPage(
           box(plotOutput("kundan4", height = 500))
       )
       ),
+      tabItem(tabName = "Static_Code_Analysis",
+        fluidRow(
+          includeText("E:/Assignment1/manik/Weather-IFY-ML-Project-/staticCodeAnalysis.txt")
+          
+      )
+      ),
       tabItem(tabName = "Code_Coverage",
         fluidRow(
           box(plotOutput("Code_Coverage1", height = 500)),
