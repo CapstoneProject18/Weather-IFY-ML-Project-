@@ -78,7 +78,39 @@ ui <- dashboardPage(
       ),
       tabItem(tabName = "Code_Coverage",
         fluidRow(
-          box(plotOutput("Code_Coverage1", height = 500))
+          box(plotOutput("Code_Coverage1", height = 500)),
+          box(plotOutput("Code_Coverage2", height = 500))
+          
+      )
+      ),
+      tabItem(tabName = "jenkins",
+        fluidRow(
+          box(plotOutput("jenkins1", height = 500)),
+          box(plotOutput("jenkins2", height = 500)),
+          box(plotOutput("jenkins3", height = 500)),
+          box(plotOutput("jenkins4", height = 500)),
+          box(plotOutput("jenkins5", height = 500))
+          
+      )
+      ),
+      tabItem(tabName = "gitHub",
+        fluidRow(
+          box(plotOutput("gitHub1", height = 500)),
+          box(plotOutput("gitHub2", height = 500)),
+          box(plotOutput("gitHub3", height = 500)),
+          box(plotOutput("gitHub4", height = 500)),
+          box(plotOutput("gitHub5", height = 500)),
+          box(plotOutput("gitHub6", height = 500)),
+          box(plotOutput("gitHub7", height = 500)),
+          box(plotOutput("gitHub8", height = 500))
+          
+      )
+      ),
+      tabItem(tabName = "zenhub",
+        fluidRow(
+          box(plotOutput("zenhub1", height = 500)),
+          box(plotOutput("zenhub2", height = 500)),
+          box(plotOutput("zenhub3", height = 500))
           
       )
       )
@@ -218,7 +250,67 @@ output$kundan1 <- renderPlot({
   output$Code_Coverage1 <- renderPlot({
     plot(myimg20)
   })
-
+  output$Code_Coverage2 <- renderPlot({
+    plot(myimg21)
+  })
+  
+  
+  output$jenkins1 <- renderPlot({
+    plot(myimg33)
+  })
+  output$jenkins2 <- renderPlot({
+    plot(myimg34)
+  })
+  output$jenkins3 <- renderPlot({
+    plot(myimg35)
+  })
+  output$jenkins4 <- renderPlot({
+    plot(myimg36)
+  })
+  output$jenkins5 <- renderPlot({
+    plot(myimg37)
+  })
+  
+  
+  
+  
+  output$gitHub1 <- renderPlot({
+    plot(myimg22)
+  })
+  output$gitHub2 <- renderPlot({
+    plot(myimg23)
+  })
+  output$gitHub3 <- renderPlot({
+    plot(myimg24)
+  })
+  output$gitHub4 <- renderPlot({
+    plot(myimg25)
+  })
+  output$gitHub5 <- renderPlot({
+    plot(myimg26)
+  })
+  output$gitHub6 <- renderPlot({
+    plot(myimg27)
+  })
+  output$gitHub7 <- renderPlot({
+    plot(myimg28)
+  })
+  output$gitHub8 <- renderPlot({
+    plot(myimg29)
+  })
+  
+  
+  output$zenhub1 <- renderPlot({
+    plot(myimg30)
+  })
+  output$zenhub2 <- renderPlot({
+    plot(myimg31)
+  })
+  output$zenhub3 <- renderPlot({
+    plot(myimg32)
+  })
+  
+  
 }
 
 
@@ -549,5 +641,84 @@ library(imager)
 
 myimg20 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/coverageReport_2.png")
 plot(myimg20)
+
+myimg21 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Screenshot from 2018-12-17 01-01-24.png")
+plot(myimg21)
+```
+
+
+```{r}
+#jenkins
+
+library(imager)
+
+myimg33 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Screenshot from 2018-12-15 01-57-34.png")
+plot(myimg33)
+
+myimg34 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Screenshot from 2018-12-15 01-58-07.png")
+plot(myimg34)
+
+myimg35 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Screenshot from 2018-12-15 01-58-18.png")
+plot(myimg35)
+
+myimg36 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Screenshot from 2018-12-15 01-58-30.png")
+plot(myimg36)
+
+myimg37 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Screenshot from 2018-12-15 02-03-10.png")
+plot(myimg37)
+
+```
+
+
+```{r}
+
+#github
+
+library(imager)
+
+myimg22 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Screenshot from 2018-12-14 19-20-12.png")
+plot(myimg22)
+
+myimg23 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Screenshot from 2018-12-14 19-20-23.png")
+plot(myimg23)
+
+myimg24 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Screenshot from 2018-12-14 19-24-35.png")
+plot(myimg24)
+
+myimg25 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Screenshot from 2018-12-14 19-24-43.png")
+plot(myimg25)
+
+myimg26 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Screenshot from 2018-12-14 19-24-57.png")
+plot(myimg26)
+
+myimg27 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Screenshot from 2018-12-14 19-25-04.png")
+plot(myimg27)
+
+myimg28 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Screenshot from 2018-12-14 19-25-07.png")
+plot(myimg28)
+
+myimg29 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Screenshot from 2018-12-14 19-25-11.png")
+plot(myimg29)
+
+
+
+```
+
+```{r}
+#zenhub
+
+
+library(imager)
+
+myimg30 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Screenshot from 2018-12-15 01-50-26.png")
+plot(myimg30)
+
+myimg31 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Screenshot from 2018-12-15 01-51-19.png")
+plot(myimg31)
+
+myimg32 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Screenshot from 2018-12-15 01-51-51.png")
+plot(myimg32)
+
+
 ```
 
