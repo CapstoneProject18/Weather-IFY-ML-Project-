@@ -15,7 +15,13 @@ ui <- dashboardPage(
       menuItem("Waseem", tabName = "waseem", icon = icon("dashboard")),
       menuItem("Aniket", tabName = "aniket", icon = icon("dashboard")),
       menuItem("Gaurav", tabName = "gaurav", icon = icon("dashboard")),
-      menuItem("Kundan", tabName = "kundan", icon = icon("dashboard"))
+      menuItem("Kundan", tabName = "kundan", icon = icon("dashboard")),
+      menuItem("Static Code Analysis", tabName = "Static_Code_Analysis", icon = icon("dashboard")),
+      menuItem("Code Coverage", tabName = "Code_Coverage", icon = icon("dashboard")),
+      menuItem("Jenkins", tabName = "jenkins", icon = icon("dashboard")),
+      menuItem("GitHub", tabName = "gitHub", icon = icon("dashboard")),
+      menuItem("Zenhub", tabName = "zenhub", icon = icon("dashboard")),
+      menuItem("Docker", tabName = "docker", icon = icon("dashboard"))
     )
   ),
   dashboardBody(
@@ -54,12 +60,26 @@ ui <- dashboardPage(
           box(plotOutput("aniket7", height = 500))
       )
       ),
+      tabItem(tabName = "gaurav",
+        fluidRow(
+          box(plotOutput("gaurav1", height = 500)),
+          box(plotOutput("gaurav2", height = 500)),
+          box(plotOutput("gaurav3", height = 500)),
+          box(plotOutput("gaurav4", height = 500))
+      )
+      ),
       tabItem(tabName = "kundan",
         fluidRow(
           box(plotOutput("kundan1", height = 500)),
           box(plotOutput("kundan2", height = 500)),
           box(plotOutput("kundan3", height = 500)),
           box(plotOutput("kundan4", height = 500))
+      )
+      ),
+      tabItem(tabName = "Code_Coverage",
+        fluidRow(
+          box(plotOutput("Code_Coverage1", height = 500))
+          
       )
       )
     )
@@ -163,6 +183,23 @@ output$aniket7 <- renderPlot({
     plot(myimg11)
   })
   
+
+
+output$gaurav1 <- renderPlot({
+    plot(myimg16)
+  })
+  output$gaurav2 <- renderPlot({
+    plot(myimg17)
+  })
+  output$gaurav3 <- renderPlot({
+    plot(myimg18)
+  })
+  output$gaurav4 <- renderPlot({
+    plot(myimg19)
+  })
+
+
+
 output$kundan1 <- renderPlot({
     plot(myimg12)
   })
@@ -176,6 +213,11 @@ output$kundan1 <- renderPlot({
     plot(myimg15)
   })
 
+  
+  
+  output$Code_Coverage1 <- renderPlot({
+    plot(myimg20)
+  })
 
 }
 
@@ -459,6 +501,28 @@ plot(myimg11)
 
 ```
 
+
+```{r}
+#gaurav
+
+library(imager)
+
+myimg16 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Date.png")
+myimg17 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/Heatmap.png")
+myimg18 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/MP.png")
+myimg19 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/MW.png")
+
+plot(myimg16)
+plot(myimg17)
+plot(myimg18)
+plot(myimg19)
+
+
+
+```
+
+
+
 ```{r}
 #kundan
 
@@ -477,4 +541,13 @@ plot(myimg15)
 
 ```
 
+
+```{r}
+#code covergae
+
+library(imager)
+
+myimg20 <- load.image("E:/Assignment1/manik/Weather-IFY-ML-Project-/Output Images/coverageReport_2.png")
+plot(myimg20)
+```
 
